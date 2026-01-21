@@ -120,21 +120,34 @@ all with the power of searching skills from your advice thanks 🥰
 }
 
 .no-3 {
-  grid-column: -2 / -3;
-  grid-row: 3 / 4;
-  justify-self: center;
-  align-self: end;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  justify-self: end;
+  align-self: center;
 }
 
 .no-6 {
-  justify-self: end;
-  align-self: center;
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: end;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 .no-9 {
   grid-column: 1 / 2;
+}
+
+.hour-hand {
+  position: absolute;
+  width: 5px;
+  height: 28%;
+  background: white;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 20px;
+  z-index: 2;
 }
 
 /* #close:checked ~ .box {
@@ -225,25 +238,28 @@ all with the power of searching skills from your advice thanks 🥰
   position: absolute;
   border-radius: 19px;
   transform-origin: bottom center;
-  transform: translateX(-50%) rotate(0deg);
-  -webkit-transform: translateX(-50%) rotate(0deg);
-  -moz-transform: translateX(-50%) rotate(0deg);
-  -ms-transform: translateX(-50%) rotate(0deg);
-  -o-transform: translateX(-50%) rotate(0deg);
-  transition: transform 60s;
-  -webkit-transition: transform 60s;
-  -moz-transition: transform 60s;
-  -ms-transition: transform 60s;
-  -o-transition: transform 60s;
-  transition-timing-function: steps(60);
   z-index: 1;
   -webkit-border-radius: 19px;
   -moz-border-radius: 19px;
   -ms-border-radius: 19px;
   -o-border-radius: 19px;
+  animation: rotation 60s infinite steps(60);
+  -webkit-animation: rotation 60s infinite steps(60);
 }
 
-.box:hover::after {
-  transform: translateX(-50%) rotate(360deg);
-  transition-timing-function: steps(60);
+@keyframes rotation {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+    -webkit-transform: translateX(-50%) rotate(0deg);
+    -moz-transform: translateX(-50%) rotate(0deg);
+    -ms-transform: translateX(-50%) rotate(0deg);
+    -o-transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+    -webkit-transform: translateX(-50%) rotate(360deg);
+    -moz-transform: translateX(-50%) rotate(360deg);
+    -ms-transform: translateX(-50%) rotate(360deg);
+    -o-transform: translateX(-50%) rotate(360deg);
+  }
 }
