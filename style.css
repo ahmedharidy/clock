@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: "Arial";
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text {
+  background-color: rgb(220, 171, 58);
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+  text-align: center;
+}
+
+.box-container {
+  /* perspective: 500px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+/* excersice 1 */
+
+/* .tooltip {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(58, 179, 220);
+  justify-self: center;
+  transform: translateY(10px) rotate(45deg);
+  -webkit-transform: translateY(10px) rotate(45deg);
+  -moz-transform: translateY(10px) rotate(45deg);
+  -ms-transform: translateY(10px) rotate(45deg);
+  -o-transform: translateY(10px) rotate(45deg);
+} */
+
+/* excersice 2
+
+it's a real animation for closing the popup not only aligning the element and UI
+
+all with the power of searching skills from your advice thanks 🥰
+*/
+/* .close {
+  position: absolute;
+  justify-self: end;
+  right: 4px;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  font-size: 1.2rem;
+  cursor: pointer;
+} */
+
+.box {
+  background-color: rgb(58, 179, 220);
+  width: 250px;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  place-content: center;
+  font-size: 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 0.3rem;
+
+  /*animation: rotating 1.5s linear infinite ;
+  -webkit-animation: close 1s linear;
+  */
+}
+
+.no-12 {
+  grid-column: 2 / 3;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.no-3 {
+  grid-column: -2 / -3;
+  grid-row: 3 / 4;
+  justify-self: center;
+  align-self: end;
+}
+
+.no-6 {
+  justify-self: end;
+  align-self: center;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.no-9 {
+  grid-column: 1 / 2;
+}
+
+/* #close:checked ~ .box {
+  animation: close 0.6s ease-in-out forwards;
+  -webkit-animation: close 0.6s ease-in-out forwards;
+}
+
+#close:not(checked) ~ .box {
+  animation: open 0.6s ease-in-out forwards;
+  -webkit-animation: open 0.6s ease-in-out forwards;
+}
+
+@keyframes close {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.9;
+  }
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+} */
+
+.box:before {
+  content: "";
+  width: 15px;
+  aspect-ratio: 1 / 1;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  z-index: 2;
+}
+/* first excersice */
+/* .box:after {
+  content: "";
+  width: 3px;
+  height: calc(50% - 10px);
+  left: 50%;
+  bottom: 50%;
+  background: white;
+  position: absolute;
+  border-radius: 19px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  -webkit-transform: translateX(-50%) rotate(0deg);
+  -moz-transform: translateX(-50%) rotate(0deg);
+  -ms-transform: translateX(-50%) rotate(0deg);
+  -o-transform: translateX(-50%) rotate(0deg);
+  transition: transform 60s linear;
+  -webkit-transition: transform 60s linear;
+  -moz-transition: transform 60s linear;
+  -ms-transition: transform 60s linear;
+  -o-transition: transform 60s linear;
+  z-index: 1;
+  -webkit-border-radius: 19px;
+  -moz-border-radius: 19px;
+  -ms-border-radius: 19px;
+  -o-border-radius: 19px;
+} */
+
+/* second excersice */
+
+.box::after {
+  content: "";
+  width: 3px;
+  height: calc(40% - 10px);
+  left: 50%;
+  bottom: 50%;
+  background: white;
+  position: absolute;
+  border-radius: 19px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  -webkit-transform: translateX(-50%) rotate(0deg);
+  -moz-transform: translateX(-50%) rotate(0deg);
+  -ms-transform: translateX(-50%) rotate(0deg);
+  -o-transform: translateX(-50%) rotate(0deg);
+  transition: transform 60s;
+  -webkit-transition: transform 60s;
+  -moz-transition: transform 60s;
+  -ms-transition: transform 60s;
+  -o-transition: transform 60s;
+  transition-timing-function: steps(60);
+  z-index: 1;
+  -webkit-border-radius: 19px;
+  -moz-border-radius: 19px;
+  -ms-border-radius: 19px;
+  -o-border-radius: 19px;
+}
+
+.box:hover::after {
+  transform: translateX(-50%) rotate(360deg);
+  transition-timing-function: steps(60);
+}
